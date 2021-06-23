@@ -12,3 +12,5 @@
 /Calendar/CalendarRepository/bin
 /Calendar/CalendarServices/bin
 /Calendar/CalendarUnitTests/bin
+/Calendar/CalendarUtils/obj
+/Calendar/.vs
