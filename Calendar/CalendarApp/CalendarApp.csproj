@@ -23,10 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CalendarDTOs\CalendarDTOs.csproj" />
     <ProjectReference Include="..\CalendarRepository\CalendarRepository.csproj" />
     <ProjectReference Include="..\CalendarServices\CalendarServices.csproj" />
