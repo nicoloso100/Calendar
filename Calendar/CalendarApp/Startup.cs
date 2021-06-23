@@ -1,5 +1,6 @@
 using CalendarRepository;
 using CalendarRepository.Settings;
+using CalendarServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
@@ -74,7 +75,8 @@ namespace CalendarApp
 
         private void ServicesLayerInjection(IServiceCollection services)
         {
-
+            services.AddSingleton<IEventsServices, EventsServices>();
+            services.AddSingleton<IGeneralServices, GeneralServices>();
         }
 
         private void RepositoriesLayerInjection(IServiceCollection services)
