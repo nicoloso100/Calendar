@@ -22,11 +22,11 @@ namespace CalendarRepository.Models
 
         [BsonElement("place")]
         [BsonRepresentation(BsonType.ObjectId)]
-        public CityModel Place { get; set; }
+        public string Place { get; set; }
 
         [BsonElement("color")]
         [BsonRepresentation(BsonType.ObjectId)]
-        public ColorModel Color { get; set; }
+        public string Color { get; set; }
 
         [BsonElement("date")]
         public DateTime Date { get; set; }

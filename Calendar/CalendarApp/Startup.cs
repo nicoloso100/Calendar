@@ -1,4 +1,6 @@
+using CalendarApp.Filters;
 using CalendarRepository;
+using CalendarRepository.Seeds;
 using CalendarRepository.Settings;
 using CalendarServices;
 using Microsoft.AspNetCore.Builder;
@@ -7,6 +9,7 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace CalendarApp
@@ -28,6 +31,7 @@ namespace CalendarApp
             services.AddSingleton<ICalendarDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<CalendarDatabaseSettings>>().Value);
 
+            ConfigureErrorMiddleware(services);
             ServicesLayerInjection(services);
             RepositoriesLayerInjection(services);
 
@@ -39,7 +43,7 @@ namespace CalendarApp
             });
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IRunSeeds seeds)
         {
             if (env.IsDevelopment())
             {
@@ -49,6 +53,8 @@ namespace CalendarApp
             {
                 app.UseExceptionHandler("/Error");
             }
+
+            seeds.PopulateDatabase();
 
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
@@ -73,6 +79,11 @@ namespace CalendarApp
             });
         }
 
+        private void ConfigureErrorMiddleware(IServiceCollection services)
+        {
+            services.AddControllers(options =>
+            options.Filters.Add(new ExceptionsFilter()));
+        }
         private void ServicesLayerInjection(IServiceCollection services)
         {
             services.AddSingleton<IEventsServices, EventsServices>();
@@ -81,6 +92,7 @@ namespace CalendarApp
 
         private void RepositoriesLayerInjection(IServiceCollection services)
         {
+            services.AddSingleton<IRunSeeds, RunSeeds>();
             services.AddTransient<IEventsRepository, EventsRepository>();
             services.AddTransient<ICitiesRepository, CitiesRepository>();
             services.AddTransient<IColorsRepository, ColorsRepository>();

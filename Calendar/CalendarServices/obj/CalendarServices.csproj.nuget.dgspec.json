@@ -4,14 +4,73 @@
     "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarServices\\CalendarServices.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarServices\\CalendarServices.csproj": {
+    "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarDomain\\CalendarDomain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarServices\\CalendarServices.csproj",
-        "projectName": "CalendarServices",
-        "projectPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarServices\\CalendarServices.csproj",
+        "projectUniqueName": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarDomain\\CalendarDomain.csproj",
+        "projectName": "CalendarDomain",
+        "projectPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarDomain\\CalendarDomain.csproj",
         "packagesPath": "C:\\Users\\nicoloso100\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarServices\\obj\\",
+        "outputPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarDomain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nicoloso100\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://estratec.pkgs.visualstudio.com/UserAndAuthenticationManager/_packaging/MasivPlatform/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarUtils\\CalendarUtils.csproj": {
+                "projectPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarUtils\\CalendarUtils.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarDTOs\\CalendarDTOs.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarDTOs\\CalendarDTOs.csproj",
+        "projectName": "CalendarDTOs",
+        "projectPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarDTOs\\CalendarDTOs.csproj",
+        "packagesPath": "C:\\Users\\nicoloso100\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarDTOs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nicoloso100\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +99,203 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarRepository\\CalendarRepository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarRepository\\CalendarRepository.csproj",
+        "projectName": "CalendarRepository",
+        "projectPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarRepository\\CalendarRepository.csproj",
+        "packagesPath": "C:\\Users\\nicoloso100\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarRepository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nicoloso100\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://estratec.pkgs.visualstudio.com/UserAndAuthenticationManager/_packaging/MasivPlatform/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarDomain\\CalendarDomain.csproj": {
+                "projectPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarDomain\\CalendarDomain.csproj"
+              },
+              "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarDTOs\\CalendarDTOs.csproj": {
+                "projectPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarDTOs\\CalendarDTOs.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.13.0-beta1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarServices\\CalendarServices.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarServices\\CalendarServices.csproj",
+        "projectName": "CalendarServices",
+        "projectPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarServices\\CalendarServices.csproj",
+        "packagesPath": "C:\\Users\\nicoloso100\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarServices\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nicoloso100\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://estratec.pkgs.visualstudio.com/UserAndAuthenticationManager/_packaging/MasivPlatform/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarDomain\\CalendarDomain.csproj": {
+                "projectPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarDomain\\CalendarDomain.csproj"
+              },
+              "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarDTOs\\CalendarDTOs.csproj": {
+                "projectPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarDTOs\\CalendarDTOs.csproj"
+              },
+              "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarRepository\\CalendarRepository.csproj": {
+                "projectPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarRepository\\CalendarRepository.csproj"
+              },
+              "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarUtils\\CalendarUtils.csproj": {
+                "projectPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarUtils\\CalendarUtils.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarUtils\\CalendarUtils.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarUtils\\CalendarUtils.csproj",
+        "projectName": "CalendarUtils",
+        "projectPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarUtils\\CalendarUtils.csproj",
+        "packagesPath": "C:\\Users\\nicoloso100\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarUtils\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nicoloso100\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://estratec.pkgs.visualstudio.com/UserAndAuthenticationManager/_packaging/MasivPlatform/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,8 +1,24 @@
 {
   "version": 2,
-  "dgSpecHash": "GHL61DMYVDJyKGBGAl7GxAz0zsGTcHi3nkl8v0Ri7wlTejrvle0F1m6V9SFjC0/ui9W/bUXJmBMEIyZOGcDp7Q==",
+  "dgSpecHash": "Gj3Id/IrZNMr06GkhpUSILJfMu2XRJwO/RptdKqi/JiXZwoYIe8lqiw5lRDPTevO66lxOVJj/gfIK5HDoBLeyQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\nicoloso100\\Downloads\\Pruebas tecnicas\\Calendar\\Calendar\\CalendarServices\\CalendarServices.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\nicoloso100\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
+    "C:\\Users\\nicoloso100\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\nicoloso100\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "C:\\Users\\nicoloso100\\.nuget\\packages\\microsoft.extensions.primitives\\2.2.0\\microsoft.extensions.primitives.2.2.0.nupkg.sha512",
+    "C:\\Users\\nicoloso100\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
+    "C:\\Users\\nicoloso100\\.nuget\\packages\\mongodb.bson\\2.13.0-beta1\\mongodb.bson.2.13.0-beta1.nupkg.sha512",
+    "C:\\Users\\nicoloso100\\.nuget\\packages\\mongodb.driver\\2.13.0-beta1\\mongodb.driver.2.13.0-beta1.nupkg.sha512",
+    "C:\\Users\\nicoloso100\\.nuget\\packages\\mongodb.driver.core\\2.13.0-beta1\\mongodb.driver.core.2.13.0-beta1.nupkg.sha512",
+    "C:\\Users\\nicoloso100\\.nuget\\packages\\mongodb.libmongocrypt\\1.2.1\\mongodb.libmongocrypt.1.2.1.nupkg.sha512",
+    "C:\\Users\\nicoloso100\\.nuget\\packages\\sharpcompress\\0.23.0\\sharpcompress.0.23.0.nupkg.sha512",
+    "C:\\Users\\nicoloso100\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\nicoloso100\\.nuget\\packages\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
+    "C:\\Users\\nicoloso100\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "C:\\Users\\nicoloso100\\.nuget\\packages\\system.text.encoding.codepages\\4.5.1\\system.text.encoding.codepages.4.5.1.nupkg.sha512",
+    "C:\\Users\\nicoloso100\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -13,11 +13,11 @@ namespace CalendarDomain
         public DateTime StartTime { get; }
         public DateTime EndTime { get; }
 
-        public Event(string name, string description, string place, string color, DateTime date, DateTime startTime, DateTime endTime)
+        public Event(string name, string description, string place, string color, DateTime? date, DateTime? startTime, DateTime? endTime)
         {
-            if(endTime < startTime)
+            if (string.IsNullOrEmpty(place))
             {
-                throw new UserErrorException("The end time cannot be less than the start time.");
+                throw new UserErrorException("You must enter an event location.");
             }
 
             if (string.IsNullOrEmpty(name))
@@ -25,18 +25,47 @@ namespace CalendarDomain
                 throw new UserErrorException("You must enter an event name.");
             }
 
-            if (string.IsNullOrEmpty(place))
-            {
-                throw new UserErrorException("You must enter an event location.");
-            }
-
             this.Name = name;
             this.Description = description;
             this.Place = place;
             this.Color = color;
-            this.Date = date;
-            this.StartTime = startTime;
-            this.EndTime = endTime;
+
+            if (date is null)
+            {
+                throw new UserErrorException("You must enter a date.");
+            }
+            else
+            {
+                this.Date = (DateTime)date;
+            }
+
+            if (startTime is null)
+            {
+                throw new UserErrorException("You must enter an event start time.");
+            }
+            else
+            {
+                this.StartTime = (DateTime)startTime;
+            }
+
+            if (endTime is null)
+            {
+                throw new UserErrorException("You must enter an event end time.");
+            }
+            else
+            {
+                this.EndTime = (DateTime)endTime;
+            }
+
+            if (EndTime < StartTime)
+            {
+                throw new UserErrorException("The end time cannot be less than the start time.");
+            }
+
+            if((Date - StartTime).Days != 0 || (Date - EndTime).Days != 0 || (EndTime - StartTime).Days != 0)
+            {
+                throw new UserErrorException("Events cannot be on two different days.");
+            }
         }
     }
 }

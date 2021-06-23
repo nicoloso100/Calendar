@@ -12,12 +12,6 @@ namespace CalendarApp.Filters
 {
     public class ExceptionsFilter : IActionFilter
     {
-        private readonly ILogger _logger;
-
-        public ExceptionsFilter(ILogger logger)
-        {
-            _logger = logger;
-        }
         public void OnActionExecuted(ActionExecutedContext context)
         {
             if (context.Exception is HandledErrorException handledException)
@@ -28,17 +22,13 @@ namespace CalendarApp.Filters
                     Content = handledException.ErrorMessage
                 };
                 context.ExceptionHandled = true;
-                if(handledException.FullException is not null)
-                {
-                    _logger.LogError(handledException.FullException.StackTrace);
-                }
             }
             else if (context.Exception is UserErrorException userErrorException)
             {
                 context.Result = new ContentResult()
                 {
                     StatusCode = userErrorException.StatusCode,
-                    Content = userErrorException.Message
+                    Content = userErrorException.ErrorMessage
                 };
                 context.ExceptionHandled = true;
             }
@@ -50,7 +40,6 @@ namespace CalendarApp.Filters
                     Content = exception.Message
                 };
                 context.ExceptionHandled = true;
-                _logger.LogError(exception.StackTrace);
             }
         }
 
