@@ -1,4 +1,4 @@
-import { all, call, put, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { GetEvents } from '../../Actions/API/eventsActions';
 import { fetchEventsFailure, fetchEventsSuccess } from '../../Actions/Redux/eventsReduxActions';
 
@@ -11,10 +11,6 @@ function* fetchEvents() {
   }
 }
 
-function* getEventSaga() {
+export default function* getEventSaga() {
   yield takeLatest<FETCH_EVENTS>('FETCH_EVENTS_BEGIN', fetchEvents);
-}
-
-export default function* rootSaga() {
-  yield all([getEventSaga()]);
 }

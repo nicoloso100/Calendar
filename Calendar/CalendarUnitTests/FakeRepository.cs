@@ -26,8 +26,8 @@ namespace CalendarUnitTests
                     Id = "60d2eeff75745e3f7028f2d9",
                     Name= "Test",
                     Description = "This is a test",
-                    Color = "60d2d378166b99f39b00e9e2",
-                    Place = "60d2d719577d025c97b039fa",
+                    Color = new DTOColor { Id = "60d2d378166b99f39b00e9e2", Code = "#E8E8E4" },
+                    Place = new DTOCity { Id = "60d2d719577d025c97b039fa", Name = "Ibagué" },
                     Date = DateTime.ParseExact("06/22/2021", "d", provider),
                     StartTime = DateTime.ParseExact("2021-06-22 10:00", defaultDateFormat, provider),
                     EndTime = DateTime.ParseExact("2021-06-22 11:00", defaultDateFormat, provider)
@@ -37,8 +37,8 @@ namespace CalendarUnitTests
                     Id = "60d2ef8dfa3581f967c51c16",
                     Name= "Test 2",
                     Description = "This is a second test",
-                    Color = "60d2d378166b99f39b00e9e2",
-                    Place = "60d2d719577d025c97b039fa",
+                    Color = new DTOColor { Id = "60d2d378166b99f39b00e9e2", Code = "#E8E8E4" },
+                    Place = new DTOCity { Id = "60d2d719577d025c97b039fa", Name = "Ibagué" },
                     Date = DateTime.ParseExact("06/22/2021", "d", provider),
                     StartTime = DateTime.ParseExact("2021-06-22 14:00", defaultDateFormat, provider),
                     EndTime = DateTime.ParseExact("2021-06-22 15:00", defaultDateFormat, provider)

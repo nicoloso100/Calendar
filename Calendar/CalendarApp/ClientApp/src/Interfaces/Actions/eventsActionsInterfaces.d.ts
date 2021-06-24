@@ -1,3 +1,4 @@
+//Fetch Events
 declare interface IFetchEventsBegin {
   type: FETCH_EVENTS_BEGIN;
 }

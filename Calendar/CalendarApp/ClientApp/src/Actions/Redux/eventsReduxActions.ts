@@ -1,3 +1,4 @@
+//Get all events
 export const fetchEventsBegin = (): IFetchEventsBegin => ({
   type: 'FETCH_EVENTS_BEGIN',
 });

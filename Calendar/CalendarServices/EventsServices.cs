@@ -24,6 +24,11 @@ namespace CalendarServices
         public async Task<List<DTOEvent>> GetAllEvents()
         {
             var eventsList = await _eventsRepository.FindAll();
+            foreach (var selectedEvent in eventsList)
+            {
+                selectedEvent.Place = await _citiesRepository.FindById(selectedEvent.Place.Id);
+                selectedEvent.Color = await _colorsRepository.FindById(selectedEvent.Color.Id);
+            }
 
             return eventsList;
         }

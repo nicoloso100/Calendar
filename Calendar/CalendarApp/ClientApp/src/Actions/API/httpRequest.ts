@@ -55,11 +55,10 @@ export class HttpRequest {
     const response = await fetch(request, headers);
     return this.GetResponse(response);
   }
-  public async Delete<T>(request: string, object: any): Promise<IHttpResponse<T>> {
+  public async Delete<T>(request: string): Promise<IHttpResponse<T>> {
     let headers = {
       ...defaultHeader,
       method: RequestMethod.DELETE,
-      body: JSON.stringify(object),
     };
 
     const response = await fetch(request, headers);

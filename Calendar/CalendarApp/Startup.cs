@@ -25,6 +25,13 @@ namespace CalendarApp
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(o => o.AddPolicy("CORSpolicy", builder =>
+            {
+                builder.WithOrigins("*")
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
             services.Configure<CalendarDatabaseSettings>(
                 Configuration.GetSection(nameof(CalendarDatabaseSettings)));
 
@@ -53,6 +60,8 @@ namespace CalendarApp
             {
                 app.UseExceptionHandler("/Error");
             }
+
+            app.UseCors("CORSpolicy");
 
             seeds.PopulateDatabase();
 
