@@ -4,4 +4,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CalendarDomain\CalendarDomain.csproj" />
+    <ProjectReference Include="..\CalendarDTOs\CalendarDTOs.csproj" />
+    <ProjectReference Include="..\CalendarRepository\CalendarRepository.csproj" />
+    <ProjectReference Include="..\CalendarUtils\CalendarUtils.csproj" />
+  </ItemGroup>
+
 </Project>

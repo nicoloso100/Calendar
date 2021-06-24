@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Calendar/CalendarDomain/obj
+/Calendar/CalendarDTOs/obj
+/Calendar/CalendarRepository/obj
+/Calendar/CalendarUnitTests/obj
+/Calendar/CalendarServices/obj
+/Calendar/CalendarDomain/bin
+/Calendar/CalendarDTOs/bin
+/Calendar/CalendarRepository/bin
+/Calendar/CalendarServices/bin
+/Calendar/CalendarUnitTests/bin
+/Calendar/CalendarUtils/obj
+/Calendar/.vs

@@ -1,9 +1,16 @@
+using CalendarApp.Filters;
+using CalendarRepository;
+using CalendarRepository.Seeds;
+using CalendarRepository.Settings;
+using CalendarServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace CalendarApp
 {
@@ -16,21 +23,34 @@ namespace CalendarApp
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(o => o.AddPolicy("CORSpolicy", builder =>
+            {
+                builder.WithOrigins("*")
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
 
-            services.AddControllersWithViews();
+            services.Configure<CalendarDatabaseSettings>(
+                Configuration.GetSection(nameof(CalendarDatabaseSettings)));
 
-            // In production, the React files will be served from this directory
+            services.AddSingleton<ICalendarDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<CalendarDatabaseSettings>>().Value);
+
+            ConfigureErrorMiddleware(services);
+            ServicesLayerInjection(services);
+            RepositoriesLayerInjection(services);
+
+            services.AddControllers();
+
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/build";
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IRunSeeds seeds)
         {
             if (env.IsDevelopment())
             {
@@ -41,6 +61,10 @@ namespace CalendarApp
                 app.UseExceptionHandler("/Error");
             }
 
+            app.UseCors("CORSpolicy");
+
+            seeds.PopulateDatabase();
+
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
@@ -50,7 +74,7 @@ namespace CalendarApp
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
+                    pattern: "api/{controller}/{action=Index}/{id?}");
             });
 
             app.UseSpa(spa =>
@@ -62,6 +86,25 @@ namespace CalendarApp
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
             });
+        }
+
+        private void ConfigureErrorMiddleware(IServiceCollection services)
+        {
+            services.AddControllers(options =>
+            options.Filters.Add(new ExceptionsFilter()));
+        }
+        private void ServicesLayerInjection(IServiceCollection services)
+        {
+            services.AddSingleton<IEventsServices, EventsServices>();
+            services.AddSingleton<IGeneralServices, GeneralServices>();
+        }
+
+        private void RepositoriesLayerInjection(IServiceCollection services)
+        {
+            services.AddSingleton<IRunSeeds, RunSeeds>();
+            services.AddTransient<IEventsRepository, EventsRepository>();
+            services.AddTransient<ICitiesRepository, CitiesRepository>();
+            services.AddTransient<IColorsRepository, ColorsRepository>();
         }
     }
 }
