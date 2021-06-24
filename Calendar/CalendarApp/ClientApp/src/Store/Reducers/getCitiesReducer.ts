@@ -1,29 +1,32 @@
-const initialState: IGetEventsState = {
-  events: [],
+const initialState: IGetCitiesState = {
+  cities: [],
   loading: false,
   error: null,
 };
 
-export default function eventsReducer(state = initialState, action: IEventsAction) {
+export default function getCitiesReducer(
+  state = initialState,
+  action: ICitiesAction
+): IGetCitiesState {
   switch (action.type) {
-    case 'FETCH_EVENTS_BEGIN':
+    case 'FETCH_CITIES_BEGIN':
       return {
         ...state,
         loading: true,
         error: null,
       };
-    case 'FETCH_EVENTS_SUCCESS':
+    case 'FETCH_CITIES_SUCCESS':
       return {
         ...state,
         loading: false,
-        items: action.payload,
+        cities: action.payload,
       };
-    case 'FETCH_EVENTS_FAILURE':
+    case 'FETCH_CITIES_FAILURE':
       return {
         ...state,
         loading: false,
         error: action.payload,
-        items: [],
+        cities: [],
       };
     default:
       return state;

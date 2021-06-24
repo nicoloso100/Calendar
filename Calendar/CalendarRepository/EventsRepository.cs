@@ -21,6 +21,8 @@ namespace CalendarRepository
             var database = client.GetDatabase(settings.DatabaseName);
 
             _events = database.GetCollection<EventModel>(settings.EventsCollectionName);
+            _events = database.GetCollection<EventModel>(settings.EventsCollectionName);
+            _events = database.GetCollection<EventModel>(settings.EventsCollectionName);
         }
 
         public async Task<List<DTOEvent>> FindAll()
@@ -60,8 +62,8 @@ namespace CalendarRepository
                 eventMongo.Place = newEvent.Place;
                 eventMongo.Color = newEvent.Color;
                 eventMongo.Date = newEvent.Date;
-                eventMongo.StartTime = eventMongo.StartTime;
-                eventMongo.EndTime = eventMongo.EndTime;
+                eventMongo.StartTime = newEvent.StartTime;
+                eventMongo.EndTime = newEvent.EndTime;
 
                 await _events.ReplaceOneAsync(selectedEvent => selectedEvent.Id.Equals(id), eventMongo);
 
@@ -110,8 +112,8 @@ namespace CalendarRepository
                 Id = selectedEvent.Id,
                 Name = selectedEvent.Name,
                 Description = selectedEvent.Description,
-                Place = selectedEvent.Place,
-                Color = selectedEvent.Color,
+                Place = new DTOCity { Id = selectedEvent.Place },
+                Color = new DTOColor { Id = selectedEvent.Color },
                 Date = selectedEvent.Date,
                 StartTime = selectedEvent.StartTime,
                 EndTime = selectedEvent.EndTime
